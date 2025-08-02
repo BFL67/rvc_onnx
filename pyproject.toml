@@ -26,15 +26,13 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dependencies = [
-    "pip>=23.3; sys_platform == 'darwin'",
-    "wheel; sys_platform == 'darwin'",
-    "PyYAML; sys_platform == 'darwin'",
+    "pip>=23.3",
     "numpy==1.26.4",
     "requests>=2.31.0,<2.32.0",
     "tqdm",
     "wget",
-    "onnxruntime; sys_platform == 'darwin'",
-    "onnxruntime-gpu; sys_platform != 'darwin'",
+    "onnxruntime",
+    "onnxruntime-gpu",
     "torch==2.3.1",
     "torchaudio==2.3.1",
     "librosa",
