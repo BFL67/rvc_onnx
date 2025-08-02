@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rvc-onnx"
+version = "1.0.0"
+authors = [
+  { name="RVC ONNX Contributors" },
+]
+description = "ONNX-based implementation for Retrieval-based Voice Conversion (RVC)"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT License" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "pip>=23.3; sys_platform == 'darwin'",
+    "wheel; sys_platform == 'darwin'",
+    "PyYAML; sys_platform == 'darwin'",
+    "numpy==1.26.4",
+    "requests>=2.31.0,<2.32.0",
+    "tqdm",
+    "wget",
+    "onnxruntime; sys_platform == 'darwin'",
+    "onnxruntime-gpu; sys_platform != 'darwin'",
+    "torch==2.3.1",
+    "torchaudio==2.3.1",
+    "librosa",
+    "scipy",
+    "einops>=0.8.0",
+    "librosa>=0.10.2",
+    "pydub>=0.25.1",
+    "onnx>=1.14",
+    "faiss-cpu>=1.7.3",
+    "praat-parselmouth",
+    "soundfile",
+    "ffmpy==0.3.1",
+    "ffmpeg-python>=0.2.0",
+]
+
+
+[project.scripts]
+rvc-onnx = "rvc_onnx.cli:main"
+
+[tool.setuptools]
+packages = ["rvc_onnx", "rvc_onnx.*"]
+include-package-data = true
+zip-safe = false
+
+[project.urls]
+Homepage = "https://github.com/BFL67/RVC_Onnx"
