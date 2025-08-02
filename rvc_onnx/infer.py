@@ -35,7 +35,7 @@ from lib.f0_method.CREPE import predict, mean, median
 
 bh, ah = signal.butter(N=5, Wn=48, btype="high", fs=16000)
 
-for l in ["torch", "faiss", "httpx", "fairseq", "httpcore", "faiss.loader", "numba.core", "urllib3"]:
+for l in ["faiss", "httpx", "httpcore", "faiss.loader", "numba.core", "urllib3"]:
     logging.getLogger(l).setLevel(logging.ERROR)
 
 def hf_download_file(url, output_path=None):
